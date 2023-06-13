@@ -1,4 +1,4 @@
-name: Run Docker Image from Docker Hub
+name: github_a
 
 on:
   workflow_dispatch:
@@ -27,5 +27,5 @@ jobs:
 
     - name: Pull and run Docker image pass env
       run: |
-        docker pull nanmu08/ghaction:union
-        docker run -e SECRET_PAYLOAD -e INPUT_ID -e INPUT_INVOKENAME -e PAYLOAD_REPO nanmu08/ghaction:union
+        docker pull ${{ vars.DOCKER_IMG }}
+        docker run -e SECRET_PAYLOAD -e INPUT_ID -e INPUT_INVOKENAME -e PAYLOAD_REPO ${{ vars.DOCKER_IMG }}

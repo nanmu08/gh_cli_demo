@@ -1,4 +1,4 @@
-name: Run Docker Image from Docker Hub
+name: github_b
 
 on:
   workflow_dispatch:
